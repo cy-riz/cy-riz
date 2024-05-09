@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+int main() {
+    int nod;
+    char cc;
+    float inc, tax, a, b, c;
+    
+    printf("\t  Choose Category\nSingle \t\t\t\t= \tW\nHead of the family  = \tX\nMarried (Joint) \t=\tY\nMarried (Separated) = \tZ\n");
+    printf("\nEnter Category: ");
+    scanf("%s", &cc);
+    printf("Enter No. of Dependent (max. of 3): ");
+    scanf("%d", &nod);
+    printf("Enter Income: ");
+    scanf("%f", &inc);
+    
+    switch (nod)
+    {
+        case 1:
+        inc = inc - 1500;
+        break;
+        
+        case 2:
+        inc = inc - 2300;
+        break;
+        
+        case 3:
+        inc = inc - 3100;
+    }
+    
+    switch (cc)
+    {
+        case 'W':
+            if (inc <= 17850){
+            tax = inc * 0.125;
+            }
+            else{
+            a = 17850 * 0.125;
+            b = inc - 17850;
+            c = b * 0.10;
+            tax = a + c;
+            }
+            break;
+        
+        case 'X':
+            if (inc <= 23900){
+            tax = inc * 0.125;
+            }
+            else{
+            a = 23900 * 0.125;
+            b = inc - 23900;
+            c = b * 0.10;
+            tax = a + c;
+            } 
+            break;
+        
+        case 'Y':
+            if (inc <= 29750){
+            tax = inc * 0.125;
+            }
+            else{
+            a = 29750 * 0.125;
+            b = inc - 29750;
+            c = b * 0.10;
+            tax = a + c;
+            } 
+            break;
+        
+        case 'Z':
+            if (inc <= 14875){
+            tax = inc * 0.125;
+            }
+            else{
+            a = 14875 * 0.125;
+            b = inc - 14875;
+            c = b * 0.10;
+            tax = a + c;
+            } 
+            break;
+    }
+    
+    
+    
+    printf("Income Tax = %.4f", tax);
+    
+    
+    return 0;
+}
